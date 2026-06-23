@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Navegante · Agencia digital en Monterrey</title>
+<meta name="description" content="Trazamos la ruta digital de tu negocio: páginas web, publicidad en Google y redes, marketplaces y automatización con inteligencia artificial. Agencia digital en Monterrey.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.11.0/dist/tabler-icons.min.css">
+<style>
+:root{
+  --abyss:#081730; --navy:#0F2A52; --screen:#0B2042; --blue:#2D419F;
+  --beacon:#F2B53C; --beacon-d:#C98A1C; --aqua:#54E0CE; --ink:#0E1726;
+  --paper:#F4F7FC; --white:#fff; --haze:#5C6B82; --hazeD:#94A6C2;
+  --line:#E2E8F2; --lineD:rgba(255,255,255,.13);
+  --maxw:1200px; --disp:'Space Grotesk',sans-serif; --body:'Hanken Grotesk',sans-serif; --mono:'Space Mono',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);color:var(--ink);background:var(--paper);line-height:1.62;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:var(--disp);font-weight:700;letter-spacing:-.025em;line-height:1.08}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 26px}
+.sec{padding:clamp(70px,10vw,128px) 0;scroll-margin-top:78px;position:relative}
+.kicker{font-family:var(--mono);font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--beacon-d);display:inline-flex;align-items:center;gap:10px}
+.kicker::before{content:"";width:26px;height:2px;background:var(--beacon)}
+.kicker.on-dark{color:var(--beacon)}
+.h-lead{font-size:clamp(15px,2vw,18px);color:var(--haze);max-width:58ch}
+.gold{color:var(--beacon)}
+
+.btn{display:inline-flex;align-items:center;gap:9px;font-family:var(--disp);font-weight:600;font-size:15px;padding:15px 28px;border-radius:13px;cursor:pointer;border:1.6px solid transparent;transition:transform .18s,background .18s,border-color .18s,color .18s,box-shadow .18s}
+.btn:active{transform:translateY(1px)}
+.btn-beacon{background:var(--beacon);color:#231703;box-shadow:0 10px 30px -12px rgba(242,181,60,.6)}
+.btn-beacon:hover{transform:translateY(-2px);filter:brightness(1.04)}
+.btn-lineLight{border-color:rgba(255,255,255,.28);color:#fff}
+.btn-lineLight:hover{border-color:var(--beacon);color:var(--beacon);transform:translateY(-2px)}
+.btn-lineDark{border-color:var(--line);color:var(--ink)}
+.btn-lineDark:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-2px)}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:60;transition:background .3s,border-color .3s,box-shadow .3s}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:76px}
+.brand{display:flex;align-items:center;gap:8px}
+.brand .wv{display:block;flex:none}
+.brand-name{font-family:var(--disp);font-weight:700;font-size:22px;letter-spacing:-.02em;color:#fff;transition:color .25s}
+.nav.scrolled .brand-name{color:var(--ink)}
+.foot-brand{margin-bottom:16px}.foot-brand .brand-name{color:#fff;font-size:24px}
+.lg{height:30px;width:auto}.lg-dark{display:none}
+.nav.scrolled{background:rgba(244,247,252,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav.scrolled .lg-light{display:none}.nav.scrolled .lg-dark{display:block}
+.nav-links{display:flex;align-items:center;gap:32px}
+.nav-links a.link{font-family:var(--mono);font-size:13px;letter-spacing:.04em;color:rgba(255,255,255,.82);transition:color .15s}
+.nav.scrolled .nav-links a.link{color:var(--ink)}
+.nav-links a.link:hover{color:var(--beacon)}
+.burger{display:none;background:none;border:0;font-size:27px;color:#fff;cursor:pointer;line-height:1}
+.nav.scrolled .burger{color:var(--ink)}
+
+/* HERO */
+.hero{position:relative;background:var(--abyss);color:#fff;padding:140px 0 90px;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(84,224,206,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(84,224,206,.05) 1px,transparent 1px);background-size:46px 46px;mask-image:radial-gradient(120% 90% at 70% 30%,#000 30%,transparent 80%);pointer-events:none}
+.hero-grid{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:54px;align-items:center}
+.hero h1{font-size:clamp(2.5rem,6.2vw,4.4rem);font-weight:700;margin:22px 0 22px;letter-spacing:-.035em}
+.hero .h-lead{color:rgba(255,255,255,.74);max-width:50ch;font-size:clamp(16px,2vw,18.5px)}
+.hero .cta-row{display:flex;flex-wrap:wrap;gap:14px;margin:34px 0 26px}
+.hero .meta{display:flex;gap:22px;flex-wrap:wrap;font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:var(--hazeD)}
+.hero .meta b{color:var(--aqua);font-weight:400}
+
+/* chartplotter screen */
+.plotter{position:relative;border-radius:20px;overflow:hidden;background:var(--screen);border:1px solid rgba(242,181,60,.22);box-shadow:0 40px 80px -30px rgba(0,0,0,.7),inset 0 0 80px rgba(8,23,48,.6)}
+.plotter svg{display:block;width:100%;height:auto}
+@keyframes march{to{stroke-dashoffset:-220}}
+@keyframes ping{0%{transform:scale(.5);opacity:.85}100%{transform:scale(2.6);opacity:0}}
+.route-live{stroke-dasharray:5 11;animation:march 5s linear infinite}
+.ping{transform-box:fill-box;transform-origin:center;animation:ping 2.6s ease-out infinite}
+.ping.b{animation-delay:1.3s}
+
+/* SECTION HEADS */
+.head{max-width:660px;margin-bottom:52px}
+.head h2{font-size:clamp(1.95rem,4.2vw,3rem);margin:18px 0 16px}
+.head.on-dark h2{color:#fff}.head.on-dark .h-lead{color:rgba(255,255,255,.74)}
+
+/* SERVICES */
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:18px}
+.svc{position:relative;background:#fff;border:1px solid var(--line);border-radius:18px;padding:30px 28px 26px;overflow:hidden;transition:transform .2s,border-color .2s,box-shadow .2s}
+.svc::before{content:"";position:absolute;top:0;left:0;height:3px;width:0;background:var(--beacon);transition:width .3s ease}
+.svc:hover{transform:translateY(-6px);border-color:rgba(242,181,60,.5);box-shadow:0 26px 48px -28px rgba(15,42,82,.4)}
+.svc:hover::before{width:100%}
+.svc-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
+.svc-id{font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:var(--haze)}
+.svc-ic{font-size:27px;color:var(--blue)}
+.svc h3{font-size:20px;font-weight:600;margin-bottom:10px;letter-spacing:-.01em}
+.svc p{color:var(--haze);font-size:14.5px;margin-bottom:16px}
+.chips{display:flex;flex-wrap:wrap;gap:7px}
+.chip{font-family:var(--mono);font-size:11.5px;color:var(--blue);background:var(--paper);padding:5px 10px;border-radius:6px}
+.svc.flag{background:var(--screen);border-color:rgba(242,181,60,.4)}
+.svc.flag::before{width:100%}
+.svc.flag h3{color:#fff}.svc.flag p{color:rgba(255,255,255,.76)}
+.svc.flag .svc-ic{color:var(--beacon)}.svc.flag .svc-id{color:var(--hazeD)}
+.svc.flag .chip{background:rgba(255,255,255,.1);color:var(--aqua)}
+.flagtag{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--beacon);display:inline-flex;align-items:center;gap:6px;margin-bottom:14px}
+
+/* WHY (dark) */
+.dark{background:var(--abyss);color:#fff;position:relative;overflow:hidden}
+.dark::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(84,224,206,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(84,224,206,.045) 1px,transparent 1px);background-size:52px 52px;mask-image:radial-gradient(120% 100% at 20% 0%,#000,transparent 75%);pointer-events:none}
+.dark .wrap{position:relative}
+.pillars{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px;margin-top:54px}
+.pillar{border-top:2px solid rgba(242,181,60,.4);padding-top:22px}
+.pillar .pi{font-size:26px;color:var(--beacon);margin-bottom:14px;display:block}
+.pillar h3{color:#fff;font-size:18px;font-weight:600;margin-bottom:9px}
+.pillar p{color:rgba(255,255,255,.7);font-size:14.5px}
+
+/* PROCESS */
+.legs{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:8px}
+.leg{position:relative;padding-top:30px}
+.leg .node{position:absolute;top:0;left:0;width:15px;height:15px;border-radius:50%;background:var(--paper);border:3px solid var(--beacon);z-index:2}
+.leg:not(:last-child)::after{content:"";position:absolute;top:7px;left:18px;right:-12px;border-top:2px dotted rgba(242,181,60,.55)}
+.leg .lid{font-family:var(--mono);font-size:12px;color:var(--haze);margin-bottom:10px}
+.leg h3{font-size:18px;font-weight:600;margin-bottom:8px}
+.leg p{color:var(--haze);font-size:14.5px}
+
+/* AUDIENCE */
+.who{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.ports{display:flex;flex-wrap:wrap;gap:11px;margin-top:30px}
+.port{font-family:var(--mono);font-size:13.5px;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:9px;padding:11px 17px;transition:.18s}
+.port:hover{border-color:var(--beacon);color:var(--beacon-d);transform:translateY(-2px)}
+
+/* CONTACT (arrival) */
+.arrival{background:var(--abyss);color:#fff}
+.contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:42px;align-items:start;margin-top:46px}
+.form{display:grid;gap:15px}
+.field label{display:block;font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--hazeD);margin-bottom:7px}
+.field input,.field textarea{width:100%;font-family:var(--body);font-size:15px;color:#fff;background:rgba(255,255,255,.05);border:1px solid var(--lineD);border-radius:12px;padding:13px 15px;transition:border-color .15s,box-shadow .15s,background .15s}
+.field input::placeholder,.field textarea::placeholder{color:rgba(255,255,255,.4)}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--beacon);background:rgba(255,255,255,.08);box-shadow:0 0 0 3px rgba(242,181,60,.18)}
+.field textarea{min-height:118px;resize:vertical}
+.info{border:1px solid var(--lineD);border-radius:18px;padding:32px 28px;background:rgba(255,255,255,.03)}
+.info h3{color:#fff;font-size:19px;font-weight:600;margin-bottom:5px}
+.info>p{color:rgba(255,255,255,.68);font-size:14px;margin-bottom:22px}
+.info a.row{display:flex;align-items:center;gap:14px;padding:14px 0;border-top:1px solid var(--lineD)}
+.info .ri{width:42px;height:42px;border-radius:12px;background:rgba(242,181,60,.14);color:var(--beacon);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.info .rk{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--hazeD)}
+.info .rl{font-weight:600;font-size:15px;color:#fff;overflow-wrap:anywhere}
+.info a.row:hover .rl{color:var(--beacon)}
+
+/* FOOTER */
+footer{background:#04101f;color:#fff;padding:66px 0 28px;position:relative}
+.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:36px}
+.foot-logo{height:30px;margin-bottom:16px}
+.foot-tag{color:rgba(255,255,255,.62);font-size:14px;max-width:34ch}
+.foot-coord{font-family:var(--mono);font-size:11.5px;color:var(--beacon);margin-top:16px;letter-spacing:.06em}
+.fcol h4{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:15px}
+.fcol a,.fcol p{display:block;color:rgba(255,255,255,.72);font-size:14.5px;margin-bottom:10px;overflow-wrap:anywhere}
+.fcol a:hover{color:var(--beacon)}
+.socials{display:flex;gap:11px;margin-top:8px}
+.socials a{width:40px;height:40px;border-radius:11px;background:rgba(255,255,255,.07);display:flex;align-items:center;justify-content:center;font-size:19px;transition:.18s}
+.socials a:hover{background:var(--beacon);color:#231703;transform:translateY(-2px)}
+.foot-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;border-top:1px solid rgba(255,255,255,.1);margin-top:48px;padding-top:24px;color:rgba(255,255,255,.5);font-family:var(--mono);font-size:12px}
+
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease}
+.reveal.in{opacity:1;transform:none}
+
+@media(max-width:900px){
+  .hero-grid,.contact-grid{grid-template-columns:1fr}
+  .plotter{order:-1;max-width:460px;margin:0 auto}
+  .legs{grid-template-columns:1fr 1fr}
+  .leg:nth-child(2)::after{display:none}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .nav-links{position:fixed;inset:76px 0 auto 0;background:var(--abyss);flex-direction:column;align-items:flex-start;gap:0;padding:10px 26px 22px;transform:translateY(-130%);transition:transform .3s;pointer-events:none;border-bottom:1px solid var(--lineD)}
+  .nav-links.open{transform:none;pointer-events:auto}
+  .nav-links a.link{width:100%;padding:15px 0;border-bottom:1px solid var(--lineD);color:#fff!important;font-size:15px}
+  .nav-links .btn{margin-top:14px}
+  .burger{display:block}
+}
+@media(max-width:620px){
+  .legs{grid-template-columns:1fr}
+  .leg::after{display:none!important}
+  .foot-grid{grid-template-columns:1fr}
+  .btn{width:100%;justify-content:center}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}.reveal{opacity:1;transform:none}}
+:focus-visible{outline:3px solid var(--beacon);outline-offset:3px;border-radius:5px}
+</style>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top" aria-label="Navegante inicio"><svg class="wv" viewBox="0 0 42 34" width="33" height="27" aria-hidden="true"><g fill="none" stroke="#3B57C9" stroke-width="3.3" stroke-linecap="round"><path d="M3 8 q4.75 -5 9.5 0 t9.5 0 t9.5 0 t9.5 0"/><path d="M3 17 q4.75 -5 9.5 0 t9.5 0 t9.5 0 t9.5 0"/><path d="M3 26 q4.75 -5 9.5 0 t9.5 0 t9.5 0 t9.5 0"/></g></svg><span class="brand-name">Navegante</span></a>
+    <nav class="nav-links" id="navLinks" aria-label="Principal">
+      <a class="link" href="#servicios">Servicios</a>
+      <a class="link" href="#porque">Por qué</a>
+      <a class="link" href="#proceso">Travesía</a>
+      <a class="link" href="#contacto">Contacto</a>
+      <a class="btn btn-beacon" href="#contacto" style="padding:11px 22px">Hablemos</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false"><i class="ti ti-menu-2"></i></button>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="reveal">
+      <span class="kicker on-dark">25°40′N · 100°18′O · Monterrey</span>
+      <h1>Llevamos tu negocio a <span class="gold">buen puerto</span> en lo digital.</h1>
+      <p class="h-lead">Trazamos la ruta completa: páginas web, tiendas en línea, publicidad en Google y redes, marketplaces y automatización con inteligencia artificial. Un solo equipo a bordo.</p>
+      <div class="cta-row">
+        <a class="btn btn-beacon" href="#contacto">Agenda una llamada <i class="ti ti-arrow-right"></i></a>
+        <a class="btn btn-lineLight" href="#servicios">Ver servicios</a>
+      </div>
+      <div class="meta"><span>RUMBO <b>Web → Ads → IA</b></span><span>DESTINO <b>Crecimiento</b></span></div>
+    </div>
+
+    <div class="plotter reveal" aria-hidden="true">
+      <svg viewBox="0 0 600 600">
+        <defs>
+          <clipPath id="scr"><rect x="14" y="14" width="572" height="572" rx="16"/></clipPath>
+        </defs>
+        <g clip-path="url(#scr)">
+          <g stroke="rgba(84,224,206,.10)" stroke-width="1">
+            <path d="M70 0V600M158 0V600M246 0V600M334 0V600M422 0V600M510 0V600"/>
+            <path d="M0 88H600M0 176H600M0 264H600M0 352H600M0 440H600M0 528H600"/>
+          </g>
+          <g fill="none" stroke="rgba(84,224,206,.22)" stroke-width="1.2">
+            <path d="M360 470 q70 -30 96 -96 q22 -60 -30 -96 q-70 -40 -130 6 q-48 38 -20 110 q24 64 84 76 z"/>
+            <path d="M380 452 q44 -22 60 -70 q14 -44 -26 -66 q-48 -22 -88 12 q-32 30 -12 80 q18 46 66 64 z" opacity=".7"/>
+          </g>
+          <g font-family="Space Mono,monospace" font-size="10" fill="rgba(148,166,194,.5)">
+            <text x="150" y="150">-12</text><text x="470" y="250">-28</text>
+            <text x="120" y="380">-9</text><text x="250" y="510">-34</text><text x="500" y="430">-20</text>
+          </g>
+          <!-- compass -->
+          <g transform="translate(118,128)">
+            <circle r="58" fill="none" stroke="rgba(255,255,255,.18)" stroke-width="1"/>
+            <circle r="48" fill="none" stroke="rgba(255,255,255,.10)" stroke-width="1"/>
+            <g stroke="rgba(255,255,255,.3)" stroke-width="1.4">
+              <line x1="0" y1="-58" x2="0" y2="-50"/><line x1="0" y1="58" x2="0" y2="50"/>
+              <line x1="-58" y1="0" x2="-50" y2="0"/><line x1="58" y1="0" x2="50" y2="0"/>
+            </g>
+            <path d="M0 -44 L9 6 L0 -4 L-9 6 Z" fill="#F2B53C"/>
+            <path d="M0 44 L9 -6 L0 4 L-9 -6 Z" fill="rgba(255,255,255,.25)"/>
+            <text x="-5" y="-64" font-family="Space Mono,monospace" font-size="12" fill="#F2B53C">N</text>
+          </g>
+          <!-- route -->
+          <polyline points="118,486 222,418 322,330 414,250 506,150" fill="none" stroke="rgba(242,181,60,.28)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+          <polyline class="route-live" points="118,486 222,418 322,330 414,250 506,150" fill="none" stroke="#F2B53C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+          <!-- vessel -->
+          <g transform="translate(118,486) rotate(-33)"><path d="M-7 7 L11 0 L-7 -7 L-2 0 Z" fill="#fff"/></g>
+          <!-- waypoints -->
+          <g font-family="Space Mono,monospace" font-size="12" fill="#54E0CE">
+            <circle cx="222" cy="418" r="6" fill="#0B2042" stroke="#54E0CE" stroke-width="2"/><text x="234" y="414">WEB</text>
+            <circle cx="322" cy="330" r="6" fill="#0B2042" stroke="#54E0CE" stroke-width="2"/><text x="334" y="326">PUBLICIDAD</text>
+            <circle cx="414" cy="250" r="6" fill="#0B2042" stroke="#54E0CE" stroke-width="2"/><text x="426" y="246">IA</text>
+          </g>
+          <!-- destination beacon -->
+          <circle class="ping" cx="506" cy="150" r="11" fill="none" stroke="#F2B53C" stroke-width="2"/>
+          <circle class="ping b" cx="506" cy="150" r="11" fill="none" stroke="#F2B53C" stroke-width="2"/>
+          <circle cx="506" cy="150" r="9" fill="#F2B53C"/>
+          <text x="452" y="128" font-family="Space Mono,monospace" font-size="12" fill="#F2B53C">BUEN PUERTO</text>
+        </g>
+        <!-- bezel -->
+        <rect x="14" y="14" width="572" height="572" rx="16" fill="none" stroke="rgba(242,181,60,.22)"/>
+        <g font-family="Space Mono,monospace" font-size="12" fill="#94A6C2">
+          <text x="36" y="44" fill="#F2B53C">NAVEGANTE · PLOTTER</text>
+          <text x="564" y="44" text-anchor="end">RUMBO 042°</text>
+          <text x="36" y="566">25°40′N 100°18′O</text>
+          <text x="564" y="566" text-anchor="end">VEL 8.4 kn</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="servicios" class="sec">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="kicker">↦ A bordo · servicios</span>
+      <h2>Todo lo digital, en un solo lugar</h2>
+      <p class="h-lead">Tomas lo que tu negocio necesita hoy y vamos sumando escalas conforme creces. Sin coordinar cinco proveedores distintos.</p>
+    </div>
+    <div class="svc-grid">
+      <article class="svc reveal">
+        <div class="svc-top"><span class="svc-id">S-01</span><i class="ti ti-device-desktop svc-ic"></i></div>
+        <h3>Sitios web y tiendas en línea</h3>
+        <p>Páginas que se ven bien y venden. Landing pages, sitios y tiendas en Shopify, listas para celular y para Google.</p>
+        <div class="chips"><span class="chip">WordPress</span><span class="chip">Shopify</span><span class="chip">SEO</span><span class="chip">Analytics</span></div>
+      </article>
+      <article class="svc reveal">
+        <div class="svc-top"><span class="svc-id">S-02</span><i class="ti ti-speakerphone svc-ic"></i></div>
+        <h3>Publicidad y campañas</h3>
+        <p>Anuncios en Google, Meta y TikTok que traen clientes, no solo "me gusta". Configuración, gestión y optimización.</p>
+        <div class="chips"><span class="chip">Google Ads</span><span class="chip">Meta Ads</span><span class="chip">TikTok Ads</span></div>
+      </article>
+      <article class="svc reveal">
+        <div class="svc-top"><span class="svc-id">S-03</span><i class="ti ti-brand-instagram svc-ic"></i></div>
+        <h3>Redes sociales y contenido</h3>
+        <p>Mantenemos tu marca activa con publicaciones, reels y contenido apoyado en inteligencia artificial.</p>
+        <div class="chips"><span class="chip">Calendario</span><span class="chip">Reels</span><span class="chip">Diseño</span></div>
+      </article>
+      <article class="svc flag reveal">
+        <span class="flagtag"><i class="ti ti-sparkles"></i> Nuestro distintivo</span>
+        <div class="svc-top"><span class="svc-id">S-04</span><i class="ti ti-robot svc-ic"></i></div>
+        <h3>Automatización e IA</h3>
+        <p>Chatbots, agentes y flujos que atienden clientes y te quitan trabajo repetitivo, las 24 horas.</p>
+        <div class="chips"><span class="chip">Chatbots</span><span class="chip">Agentes IA</span><span class="chip">n8n</span><span class="chip">RAG</span></div>
+      </article>
+      <article class="svc reveal">
+        <div class="svc-top"><span class="svc-id">S-05</span><i class="ti ti-building-store svc-ic"></i></div>
+        <h3>Marketplaces</h3>
+        <p>Vende donde la gente ya está comprando. Amazon y Mercado Libre con publicaciones optimizadas.</p>
+        <div class="chips"><span class="chip">Amazon</span><span class="chip">Mercado Libre</span></div>
+      </article>
+      <article class="svc reveal">
+        <div class="svc-top"><span class="svc-id">S-06</span><i class="ti ti-palette svc-ic"></i></div>
+        <h3>Branding y diseño</h3>
+        <p>Identidad, diseño gráfico y dirección digital para que tu negocio se vea profesional desde el primer contacto.</p>
+        <div class="chips"><span class="chip">Logo</span><span class="chip">Identidad</span><span class="chip">Estrategia</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section id="porque" class="sec dark">
+  <div class="wrap">
+    <div class="head on-dark reveal" style="max-width:780px">
+      <span class="kicker on-dark">✦ Por qué Navegante</span>
+      <h2>La mayoría de las agencias se detienen en web y anuncios. Nosotros seguimos.</h2>
+      <p class="h-lead">Construimos tu presencia digital y le ponemos un motor de automatización e inteligencia artificial: agentes que atienden, flujos que ahorran horas y herramientas que trabajan por ti mientras te enfocas en tu negocio.</p>
+    </div>
+    <div class="pillars">
+      <div class="pillar reveal"><i class="ti ti-stack-2 pi"></i><h3>Todo en un solo lugar</h3><p>Web, publicidad, redes, marketplaces e IA con un mismo equipo. Sin malabares entre proveedores.</p></div>
+      <div class="pillar reveal"><i class="ti ti-bolt pi"></i><h3>Con motor de IA</h3><p>Automatizamos atención, seguimiento y contenido para que tu operación no dependa solo de horas-persona.</p></div>
+      <div class="pillar reveal"><i class="ti ti-target-arrow pi"></i><h3>Enfocados en resultados</h3><p>Medimos lo que importa: clientes y ventas, no métricas de vanidad que no pagan la renta.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="proceso" class="sec">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="kicker">⟿ La travesía · proceso</span>
+      <h2>De la idea a los resultados, en cuatro tramos</h2>
+    </div>
+    <div class="legs">
+      <div class="leg reveal"><span class="node"></span><div class="lid">TRAMO 01</div><h3>Diagnóstico</h3><p>Entendemos tu negocio, tu mercado y a dónde quieres llegar.</p></div>
+      <div class="leg reveal"><span class="node"></span><div class="lid">TRAMO 02</div><h3>Estrategia</h3><p>Definimos el plan, los canales y las prioridades según tu presupuesto.</p></div>
+      <div class="leg reveal"><span class="node"></span><div class="lid">TRAMO 03</div><h3>Implementación</h3><p>Construimos y lanzamos: web, campañas y automatizaciones.</p></div>
+      <div class="leg reveal"><span class="node"></span><div class="lid">TRAMO 04</div><h3>Optimización</h3><p>Medimos, ajustamos y escalamos lo que funciona, mes con mes.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- AUDIENCE -->
+<section class="sec who">
+  <div class="wrap">
+    <div class="head reveal" style="margin-bottom:0">
+      <span class="kicker">⚓ Puertos · para quién</span>
+      <h2>Trabajamos con negocios como el tuyo</h2>
+    </div>
+    <div class="ports reveal">
+      <span class="port">Inmobiliarias</span><span class="port">E-commerce</span><span class="port">Servicios profesionales</span>
+      <span class="port">Restaurantes</span><span class="port">Salud y belleza</span><span class="port">Educación</span>
+      <span class="port">Startups</span><span class="port">PyMEs locales</span>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT / ARRIVAL -->
+<section id="contacto" class="sec arrival">
+  <div class="wrap">
+    <div class="head on-dark reveal">
+      <span class="kicker on-dark">Destino · contacto</span>
+      <h2>Has llegado a buen puerto. Hablemos.</h2>
+      <p class="h-lead">Llena el formulario y se abrirá WhatsApp con tu mensaje listo para enviar. O escríbenos directo por cualquiera de estos medios.</p>
+    </div>
+    <div class="contact-grid">
+      <form class="form reveal" id="leadForm">
+        <div class="field"><label for="nombre">Nombre</label><input id="nombre" type="text" placeholder="Tu nombre" required></div>
+        <div class="field"><label for="negocio">Negocio (opcional)</label><input id="negocio" type="text" placeholder="Nombre de tu negocio"></div>
+        <div class="field"><label for="contacto2">Teléfono o correo</label><input id="contacto2" type="text" placeholder="Para poder responderte" required></div>
+        <div class="field"><label for="mensaje">¿Qué necesitas?</label><textarea id="mensaje" placeholder="Página web, anuncios, automatización…"></textarea></div>
+        <button type="submit" class="btn btn-beacon" style="justify-content:center"><i class="ti ti-brand-whatsapp"></i> Enviar por WhatsApp</button>
+      </form>
+      <aside class="info reveal">
+        <h3>Contacto directo</h3>
+        <p>Respondemos rápido en horario laboral.</p>
+        <a class="row" id="waRow" href="#"><span class="ri"><i class="ti ti-brand-whatsapp"></i></span><span><span class="rk">WhatsApp</span><br><span class="rl">81 8690 4286</span></span></a>
+        <a class="row" href="mailto:luis.corona@navegantepublicidad.com"><span class="ri"><i class="ti ti-mail"></i></span><span><span class="rk">Correo</span><br><span class="rl">luis.corona@navegantepublicidad.com</span></span></a>
+        <a class="row" href="#"><span class="ri"><i class="ti ti-map-pin"></i></span><span><span class="rk">Ubicación</span><br><span class="rl">Monterrey, Nuevo León</span></span></a>
+      </aside>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand foot-brand" href="#top" aria-label="Navegante"><svg class="wv" viewBox="0 0 42 34" width="36" height="29" aria-hidden="true"><g fill="none" stroke="#3B57C9" stroke-width="3.3" stroke-linecap="round"><path d="M3 8 q4.75 -5 9.5 0 t9.5 0 t9.5 0 t9.5 0"/><path d="M3 17 q4.75 -5 9.5 0 t9.5 0 t9.5 0 t9.5 0"/><path d="M3 26 q4.75 -5 9.5 0 t9.5 0 t9.5 0 t9.5 0"/></g></svg><span class="brand-name">Navegante</span></a>
+        <p class="foot-tag">Agencia digital en Monterrey. Trazamos la ruta de tu negocio en internet: web, publicidad, marketplaces e IA.</p>
+        <p class="foot-coord">25°40′17″N 100°18′31″O</p>
+        <div class="socials">
+          <a href="#" aria-label="Instagram"><i class="ti ti-brand-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="ti ti-brand-facebook"></i></a>
+          <a href="#" aria-label="TikTok"><i class="ti ti-brand-tiktok"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="ti ti-brand-linkedin"></i></a>
+        </div>
+      </div>
+      <div class="fcol"><h4>Servicios</h4><a href="#servicios">Páginas web</a><a href="#servicios">Publicidad</a><a href="#servicios">Redes y contenido</a><a href="#servicios">Automatización e IA</a><a href="#servicios">Marketplaces</a></div>
+      <div class="fcol"><h4>Navegante</h4><a href="#porque">Por qué nosotros</a><a href="#proceso">Travesía</a><a href="#contacto">Contacto</a></div>
+      <div class="fcol"><h4>Contacto</h4><p>WhatsApp · 81 8690 4286</p><a href="mailto:luis.corona@navegantepublicidad.com">luis.corona@navegantepublicidad.com</a><p>Monterrey, N.L., México</p></div>
+    </div>
+    <div class="foot-bottom"><span>© <span id="year"></span> NAVEGANTE PUBLICIDAD</span><span>HECHO EN MONTERREY 🌊</span></div>
+  </div>
+</footer>
+
+<script>
+const WHATSAPP="528186904286";
+document.getElementById('year').textContent=new Date().getFullYear();
+const nav=document.getElementById('nav'),links=document.getElementById('navLinks'),burger=document.getElementById('burger');
+const onScroll=()=>nav.classList.toggle('scrolled',window.scrollY>40);onScroll();window.addEventListener('scroll',onScroll,{passive:true});
+burger.addEventListener('click',()=>{const o=links.classList.toggle('open');burger.setAttribute('aria-expanded',o);});
+links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+const wa=t=>"https://wa.me/"+WHATSAPP+"?text="+encodeURIComponent(t);
+document.getElementById('waRow').href=wa("Hola Navegante, me interesa una propuesta para mi negocio.");
+document.getElementById('leadForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  const v=id=>document.getElementById(id).value.trim();
+  let m="Hola Navegante, soy "+(v('nombre')||"(sin nombre)")+".";
+  if(v('negocio'))m+=" Negocio: "+v('negocio')+".";
+  if(v('mensaje'))m+=" Necesito: "+v('mensaje')+".";
+  if(v('contacto2'))m+=" Contacto: "+v('contacto2')+".";
+  window.open(wa(m),"_blank");
+});
+const io=new IntersectionObserver((es)=>{es.forEach(en=>{if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
