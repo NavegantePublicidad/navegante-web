@@ -1,0 +1,177 @@
+/* ==========================================================================
+   Hoja propia del aviso de privacidad.
+
+   No reusa styles.css a proposito. Esa hoja esta construida para la pista
+   horizontal: paneles de 100dvw por 100dvh, overflow hidden en html y body, y
+   un puente de rueda. Un documento legal es lo contrario de eso: es texto
+   largo que se lee de arriba hacia abajo y se imprime. Meterlo en la pista
+   seria pelear con toda la arquitectura para nada.
+
+   Lo que si comparte: las fuentes y la paleta de marca.md, importadas del
+   mismo lugar, para que se lea como parte del sitio.
+   ========================================================================== */
+
+:root {
+  --papel:          #F4F7FC;
+  --papel-2:        #E8EEF7;
+  --tinta:          #0E1726;
+  --tinta-2:        #3D4C64;
+  --borde:          #CBD7E6;
+  --abyss:          #081730;
+  --beacon:         #F2B53C;
+  --azul-navegante: #2D419F;
+
+  --sans:  "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --mono:  "Space Mono", ui-monospace, monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--papel);
+  color: var(--tinta);
+  font-family: var(--sans);
+  font-size: 1rem;
+  line-height: 1.65;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Barra superior, del color del sitio. */
+.cinta {
+  background: var(--abyss);
+  color: var(--papel);
+  padding: 1rem clamp(1rem, 5vw, 3rem);
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.cinta__marca {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--papel);
+}
+
+.cinta__volver {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--beacon);
+}
+
+/* Medida de lectura. 68ch es lo comodo para texto legal denso. */
+main {
+  max-width: 68ch;
+  margin: 0 auto;
+  padding: clamp(2rem, 6vh, 4rem) clamp(1rem, 5vw, 2rem) 6rem;
+}
+
+h1 {
+  font-family: var(--display);
+  font-size: clamp(1.75rem, 5vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.5rem;
+  text-wrap: balance;
+}
+
+.fecha {
+  font-family: var(--mono);
+  font-size: 0.8125rem;
+  color: var(--tinta-2);
+  margin: 0 0 2.5rem;
+}
+
+h2 {
+  font-family: var(--display);
+  font-size: clamp(1.125rem, 2.6vw, 1.375rem);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  margin: 2.75rem 0 0.75rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--borde);
+  text-wrap: balance;
+}
+
+h2:first-of-type { margin-top: 0; }
+
+h2 .num {
+  font-family: var(--mono);
+  font-size: 0.8125rem;
+  font-weight: 400;
+  color: var(--azul-navegante);
+  margin-right: 0.6rem;
+}
+
+p { margin: 0 0 1rem; }
+
+ul { margin: 0 0 1rem; padding-left: 1.25rem; }
+li { margin-bottom: 0.4rem; }
+
+strong { font-weight: 600; }
+
+a { color: var(--azul-navegante); }
+a:hover { text-decoration-thickness: 2px; }
+
+/* Foco visible, tambien en un documento legal. */
+a:focus-visible {
+  outline: 2px solid var(--azul-navegante);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+.cinta a:focus-visible { outline-color: var(--beacon); }
+
+/* Bloque de datos del responsable y de contacto ARCO. */
+.ficha {
+  background: var(--papel-2);
+  border-left: 3px solid var(--beacon);
+  padding: 1.25rem 1.5rem;
+  margin: 0 0 1.25rem;
+}
+.ficha p:last-child { margin-bottom: 0; }
+.ficha dt {
+  font-family: var(--mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--tinta-2);
+}
+.ficha dd { margin: 0 0 0.75rem; }
+.ficha dd:last-child { margin-bottom: 0; }
+
+/* Lo que Luis todavia tiene que llenar. Visible a proposito: un aviso con
+   huecos silenciosos es peor que uno que los senala. */
+.pendiente {
+  background: #FDF3D8;
+  border: 1px solid var(--beacon);
+  padding: 1rem 1.25rem;
+  margin: 0 0 1.5rem;
+  font-size: 0.9375rem;
+}
+.pendiente strong { color: #6B4A05; }
+
+.pie {
+  border-top: 1px solid var(--borde);
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  font-size: 0.875rem;
+  color: var(--tinta-2);
+}
+
+@media print {
+  .cinta, .pendiente { display: none; }
+  body { background: #fff; }
+  main { max-width: none; padding: 0; }
+  h2 { break-after: avoid; }
+}
